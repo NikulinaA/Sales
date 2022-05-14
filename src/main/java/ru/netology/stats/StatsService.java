@@ -9,11 +9,8 @@ public class StatsService {
         return sum;
     }
 
-    public int average(int[] sales) { // Расчет средней суммы продаж в месяц
-        int sum = 0;
-        for (int sale : sales) {
-            sum += sale;
-        }
+    public int average(int[] sales, int sum) { // Расчет средней суммы продаж в месяц
+
         int abs = sum / sales.length;
 
         return abs;
@@ -40,12 +37,8 @@ public class StatsService {
         return mini + 1; // месяцы считаются с первого, а не с нулевого. Прибавляем 1
     }
 
-    public int countMonthPriority(int[] sales) { // Расчет средней суммы продаж в месяц
-        int sum = 0;
-        for (int sale : sales) {
-            sum += sale;
-        }
-        int abs = sum / sales.length;
+    public int countMonthPriority(int[] sales, int abs, int sum) { // Расчет средней суммы продаж в месяц
+
         int countMax = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > abs) {
@@ -57,12 +50,7 @@ public class StatsService {
 
     }
 
-    public int countMonthNoPriority(int[] sales) { // Расчет средней суммы продаж в месяц
-        int sum = 0;
-        for (int sale : sales) {
-            sum += sale;
-        }
-        int abs = sum / sales.length;
+    public int countMonthNoPriority(int[] sales, int abs, int sum) { // Расчет средней суммы продаж в месяц
         int countMin = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < abs) {

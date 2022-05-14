@@ -9,7 +9,7 @@ public class Main {
         int sum = service.sum(sales); // п.1 Сумма всех продаж
         System.out.println(sum);
 
-        int abs = service.average(sales);
+        int abs = service.average(sales, sum);
         System.out.println(abs);
 
         int saleMax = service.maxi(sales);
@@ -18,10 +18,10 @@ public class Main {
         int saleMin = service.min(sales);
         System.out.println(saleMin);
 
-        int countMonthPriority = service.countMonthPriority(sales);
+        int countMonthPriority = service.countMonthPriority(sales, abs, sum);
         System.out.println(countMonthPriority);
 
-        int countMonthNoPriority = service.countMonthNoPriority(sales);
+        int countMonthNoPriority = service.countMonthNoPriority(sales, abs, sum);
         System.out.println(countMonthNoPriority);
 
 
