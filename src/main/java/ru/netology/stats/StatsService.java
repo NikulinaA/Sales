@@ -12,8 +12,8 @@ public class StatsService {
 
     public int average(int[] sales) { // Расчет средней суммы продаж в месяц
 
-        StatsService service = new StatsService();
-        int sum = service.sum(sales);
+
+        int sum = sum(sales);
 
         int abs = sum / sales.length;
 
@@ -43,8 +43,7 @@ public class StatsService {
 
     public int countMonthPriority(int[] sales) { // Расчет средней суммы продаж в месяц
 
-        StatsService service = new StatsService();
-        int abs = service.average(sales);
+        int abs = average(sales);
         int countMax = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > abs) {
@@ -58,13 +57,13 @@ public class StatsService {
 
     public int countMonthNoPriority(int[] sales) { // Расчет средней суммы продаж в месяц
 
-        StatsService service = new StatsService();
-        int abs = service.average(sales);
+        int abs = average(sales);
 
         int countMin = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < abs) {
                 countMin++;
+
             }
 
         }
