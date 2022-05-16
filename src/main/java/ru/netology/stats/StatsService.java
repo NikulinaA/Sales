@@ -1,6 +1,7 @@
 package ru.netology.stats;
 
 public class StatsService {
+
     public int sum(int[] sales) { // Расчет суммы всех продаж
         int sum = 0;
         for (int sale : sales) {
@@ -9,7 +10,10 @@ public class StatsService {
         return sum;
     }
 
-    public int average(int[] sales, int sum) { // Расчет средней суммы продаж в месяц
+    public int average(int[] sales) { // Расчет средней суммы продаж в месяц
+
+        StatsService service = new StatsService();
+        int sum = service.sum(sales);
 
         int abs = sum / sales.length;
 
@@ -37,8 +41,10 @@ public class StatsService {
         return mini + 1; // месяцы считаются с первого, а не с нулевого. Прибавляем 1
     }
 
-    public int countMonthPriority(int[] sales, int abs, int sum) { // Расчет средней суммы продаж в месяц
+    public int countMonthPriority(int[] sales) { // Расчет средней суммы продаж в месяц
 
+        StatsService service = new StatsService();
+        int abs = service.average(sales);
         int countMax = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > abs) {
@@ -50,7 +56,11 @@ public class StatsService {
 
     }
 
-    public int countMonthNoPriority(int[] sales, int abs, int sum) { // Расчет средней суммы продаж в месяц
+    public int countMonthNoPriority(int[] sales) { // Расчет средней суммы продаж в месяц
+
+        StatsService service = new StatsService();
+        int abs = service.average(sales);
+
         int countMin = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < abs) {

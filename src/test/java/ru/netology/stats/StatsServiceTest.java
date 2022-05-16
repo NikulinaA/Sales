@@ -5,10 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class StatsServiceTest {
     int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-    StatsService service = new StatsService();
-    int sum = service.sum(sales);
-    int abs = service.average(sales, sum);
-
 
     @Test
     public void calcSum() {
@@ -24,7 +20,7 @@ public class StatsServiceTest {
     public void calcABS() {
         StatsService service = new StatsService();
 
-        int absActual = service.average(sales, sum);
+        int absActual = service.average(sales);
         int absExpected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
         Assertions.assertEquals(absExpected, absActual);
@@ -54,7 +50,7 @@ public class StatsServiceTest {
     public void countMonthPriority() {
         StatsService service = new StatsService();
 
-        int actual = service.countMonthPriority(sales, abs, sum);
+        int actual = service.countMonthPriority(sales);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);
@@ -64,7 +60,7 @@ public class StatsServiceTest {
     public void countMonthNoPriority() {
         StatsService service = new StatsService();
 
-        int actual = service.countMonthNoPriority(sales, abs, sum);
+        int actual = service.countMonthNoPriority(sales);
         int expected = 5;
 
         Assertions.assertEquals(expected, actual);
